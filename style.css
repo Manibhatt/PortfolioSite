@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+:root{
+--mainColor: #eaeaea;
+--secondaryColor: #fff;
+
+--borderColor: #c1c1c1; 
+
+--mainText: red;
+--secondaryText: #4b5156;
+
+--themeDotBorder: #24292E;
+
+--previewBg: rgb(251,249, 243,0.8);
+--previewShadow: #f0ead6
+}
+
+html, body {
+  padding: 0px;
+  margin:  0px;
+}
+
+h1,h2,h3,h4,h5,h6, strong{
+  color: var(--mainText);
+  font-family: "Russo One", sans-serif;
+  font-weight: 500;
+}
+
+h1{ font-size: 56px;}
+h2{ font-size: 36px;}
+h3{ font-size: 28px;}
+h4{ font-size: 24px;}
+h5{ font-size: 22px;}
+
+ul{
+  text-decoration: none;
+  list-style: none;
+}
+
+a{ 
+  text-decoration: none;
+}
+
+p,li,span,label, input, textarea{
+  color: var(--secondaryText);
+}
+.s1{
+  background-color: var(--mainColor);
+  border-bottom:1px solid var(--borderColor);
+  overflow: auto;
+}
+.s2{
+  background-color: var(--secondaryColor);
+  border-bottom: 1px solid var(--borderColor);
+  overflow: auto;
+}
+.main-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.greeting-wrapper{
+  display: grid;
+  text-align: center;
+  align-content: center;
+  min-height: 10em;
+}
+
+.intro-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'nav-wrapper nav-wrapper'
+    'left-column right-column';
+    border-radius: 5px 5px 0px 0px;
+  grid-template-rows: 3em 30em;
+  background-color: var(--secondaryColor);
+  border: 1px solid var(--borderColor);
+  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+}
+
+.nav-wrapper{
+  grid-area: nav-wrapper;
+  display: flex;
+  border-radius: 5px 5px 0px 0px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borderColor);
+  background-color: var(--mainColor)
+}
+#navigation{
+  margin: 0;
+  padding: 10px;
+}
+#navigation li{
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.browser-dot{
+  background-color: black;
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+}
+#dot-1{
+  background-color:#FC6058;
+}
+#dot-2{
+  background-color:#FEC02F;
+}
+#dot-3{
+  background-color:#2ACA3E;
+}
+
+.dots-wrapper{
+  display: flex;
+  padding: 10px;
+}
+
+.left-column{
+  grid-area: left-column;
+  padding-top:50px;
+  padding-top:50px;
+}
+
+.right-column{
+  grid-area: right-column;
+  display: grid;
+  align-content: center;
+  padding: 50px 0px;
+}
+
+#profile_pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border: 1px solid var(--borderColor);
+  display: block;
+  margin:0 auto;
+}
+
+.theme-dot{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: black;
+  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+  cursor: pointer;
+  border: 2px solid var(--themeDotBorder);
+}
+.theme-dot:hover{
+  border-width: 5px;
+}
+
+#light-mode{
+  background-color:#fff;
+}
+
+#settings-note{
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+}
+
+#blue-mode{
+  background-color:#192734;
+}
+#green-mode{
+  background-color:#78866b;
+}
+#purple-mode{
+  background-color:#7E4C74;
+}
+.theme-option-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#preview{
+  width: 300px;
+  background-color: var(--previewBg);
+  border: 1.5px solid #17a2b8;
+  padding: 15px ;
+  position: relative;
+}
+
+#preview-shadow{
+  background-color: var(--previewShadow);
+  width: 300px;
+  height: 180px;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.corner{
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: 1.5px solid #17a2b8;
+  background-color: #fff;
+  position: absolute;
+}
+#corner-tl{
+  top: -5px;
+  left: -5px;
+}
+
+#corner-tr{
+  top: -5px;
+  right: -5px;
+}
+
+#corner-bl{
+  bottom: -5px;
+  left: -5px;
+}
+
+#corner-br{
+  bottom: -5px;
+  right: -5px;
+}
+
+
+
+@media  screen and (max-width: 1200px){
+  .main-container{
+    width: 95%;
+  }
+}
+
+@media  screen and (max-width: 800px){
+  .intro-wrapper{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'nav-wrapper'
+      'left-column'
+      'right-column';
+  }
+
+  .right-column{
+    justify-content: center;
+  }
+}
